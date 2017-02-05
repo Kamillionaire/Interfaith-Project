@@ -13,7 +13,7 @@ namespace IFP {
           url: '',
           abstract: true,
           template: '<main-app></main-app>'
-
+          
           // component:'mainApp'
         })
         .state('main.home', {

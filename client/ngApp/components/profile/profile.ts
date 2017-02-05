@@ -29,7 +29,7 @@ namespace IFP.Components{
         }
     };
 
-  angular.module('interfaith-project').component(name,{
+  angular.module('ifp').component(name,{
     templateUrl: template,
     controller: IFP.Components.Profile,
     controllerAs: 'vm',

@@ -1,5 +1,5 @@
 namespace IFP.Components{
-  const name='home';
+  const name='main';
   const template='/client/ngApp/components/home/home.html';
   export class Home {
 
@@ -8,6 +8,5 @@ namespace IFP.Components{
     templateUrl: template,
     controller: IFP.Components.Home,
     controllerAs: 'vm'
-
   })
 }

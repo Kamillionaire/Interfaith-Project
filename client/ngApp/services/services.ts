@@ -102,8 +102,8 @@ namespace IFP.Services {
     // };
 
 
-    // angular.module('ifp').service('Session', Session);
-    // angular.module('ifp').service('UserService', UserService);
-    // angular.module('ifp').service('ProfileService', ProfileService);
+      //angular.module('ifp').service('Session', Session);
+      angular.module('ifp').service('UserService', UserService);
+      angular.module('ifp').service('ProfileService', ProfileService);
 
 };
