@@ -5,7 +5,7 @@ import * as path from 'path';
 import * as mongoose from 'mongoose';
 import * as passport from 'passport';
 import * as session from 'express-session';
-const MongoStore = require('connect-mongo')(session)
+const MongoStore = require('connect-mongo')(session);
 import Users from './models/Users';
 import Profile from './models/Profile';
 import {ReligionsSeeds} from './models/seeds/religions';
@@ -103,8 +103,8 @@ app.use('/node_modules', express.static(path.join(__dirname, '../node_modules'))
 app.use('/client', express.static(path.join(__dirname,'../client')));
 
 // bootstrap api
-app.use('/api', require('/api/users'));
-app.use('/api', require('/api/profile'));
+app.use('/api', require('./api/users'));
+app.use('/api', require('./api/profile'));
 
 //a server route
 app.use('/', require('./routes/index'));

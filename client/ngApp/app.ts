@@ -51,5 +51,5 @@ namespace IFP {
 
     })
 
-    .run([])
+    .run([()=>{}])
 };
