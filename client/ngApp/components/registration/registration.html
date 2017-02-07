@@ -1,4 +1,4 @@
-<h1>Register</h1>
+h1>Register</h1>
 
 <div class="well">
 <alerts messages = "vm.alerts" ></alerts>
@@ -27,6 +27,37 @@
                     <input type="password" ng-model="vm.user.password" class="form-control" id="inputPassword" placeholder="Password">
                 </div>
             </div>
+
+            <div class="form-group">
+                <label for="inputDob" class="col-xs-1 control-label">DOB</label>
+                <div class="col-lg-10">
+                  <div uib-datepicker ng-model="vm.user.dob" class="well well-sm"></div>
+                </div>
+            </div>
+
+        <div class="well">
+            <div class="btn-group" uib-dropdown>
+                <button id="split-button" type="button" class="btn btn-warning">{{vm.user.state ||'State'}}</button>
+                <button type="button" class="btn btn-warning" uib-dropdown-toggle>
+                    <span class="caret"></span>
+                    <span class="sr-only">Split button!</span>
+                </button>
+                <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="split-button">
+                    <li ng-click="vm.user.state = state" ng-repeat="state in vm.states" role="menuitem"><a>{{state}}</a></li>
+                </ul>
+            </div>
+
+            <div class="btn-group" uib-dropdown>
+                <button id="split-button" type="button" class="btn btn-warning">{{vm.user.religion.name ||'Religion'}}</button>
+                <button type="button" class="btn btn-warning" uib-dropdown-toggle>
+                    <span class="caret"></span>
+                    <span class="sr-only">Split button!</span>
+                </button>
+                <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="split-button">
+                    <li ng-click="vm.user.religion = religion" ng-repeat="religion in vm.religions" role="menuitem"><a>{{religion.name}}</a></li>
+                </ul>
+            </div>
+        </div>
 
             <div class="form-group">
                 <div class="col-xs-12">

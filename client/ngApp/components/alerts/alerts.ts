@@ -1,4 +1,4 @@
-namespace BMPM.Components{
+namespace IFP.Components{
   const name='alerts';
   const template='/client/ngApp/components/alerts/alerts.html';
   export class Alerts {
@@ -14,9 +14,9 @@ namespace BMPM.Components{
     }
   }
 
-  angular.module('bmpm').component(name, {
+  angular.module('ifp').component(name, {
       templateUrl: template,
-      controller: BMPM.Components.Alerts,
+      controller: IFP.Components.Alerts,
       controllerAs: 'vm',
       bindings: {
         messages:'<'
