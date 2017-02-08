@@ -1,6 +1,5 @@
 namespace IFP.Services {
 
-
     export class UserService {
         private LoginResource;
         private LogoutResource;

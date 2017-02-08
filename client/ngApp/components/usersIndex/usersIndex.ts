@@ -8,7 +8,7 @@ namespace IFP.Components{
         public users;
         public tableParams;
         public Session;
-        public username;
+        public id;
         public alerts = [];
       constructor(
         private UserService: IFP.Services.UserService,

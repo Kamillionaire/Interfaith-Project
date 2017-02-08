@@ -3,7 +3,7 @@ import * as mongoose from 'mongoose';
 import * as passport from 'passport';
 import * as jwt from 'jsonwebtoken';
 import Users from '../models/Users';
-import {Religions} from '../models/Religions';
+import {Religion} from '../models/Religions';
 import Profile from '../models/Profile';
 import methods from './methods';
 
@@ -36,6 +36,7 @@ router.post('/Register', function(req, res, next) {
         userProfile.email = req.body.email;
         userProfile.state = req.body.state;
         userProfile.religion = req.body.religion;
+        console.log(userProfile.religion)
         userProfile.save((err, profile) => {
             if (err) return next(err);
             res.status(200).json({ message: "Registration complete." });

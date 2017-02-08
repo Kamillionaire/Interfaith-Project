@@ -4,11 +4,22 @@ namespace IFP.Components {
     export class Registration {
         public user = {dob:new Date()}
         public alerts =[];
+        public states;
+        public religions;
 
         constructor(
             private UserService: IFP.Services.UserService,
             private $state: ng.ui.IStateService,
+            STATES, $http:ng.IHttpService,
+            
+
         ) {
+          $http.get('/api/religions').then((res)=>{
+            this.religions = res.data;
+          }).catch ((e)=>{
+            throw new Error (e)
+          })
+        this.states = STATES.all;
          }
 
         register() {

@@ -2,6 +2,7 @@ import * as mongoose from 'mongoose';
 import * as crypto from 'crypto';
 import * as jwt from 'jsonwebtoken';
 import Profile from './../models/Profile';
+
 export interface IFacebook {
   token: string,
   name: string,

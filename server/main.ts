@@ -10,7 +10,6 @@ import Users from './models/Users';
 import Profile from './models/Profile';
 import {ReligionsSeeds} from './models/seeds/religions';
 
-
 //express routes
 import * as routes from './routes/index';
 
@@ -26,7 +25,7 @@ if(dev){
   let dotenv = require('dotenv');
   dotenv.load();
 }
-// require("./config/passport");
+require("./config/passport");
 
 //db connections
 mongoose.connect(process.env.MONGO_URI)
@@ -36,12 +35,12 @@ mongoose.connection.on('connected', () => {
   console.log('mongoose connected');
 
 // if dev ReligionsSeeds do not exist, run this
-  if(dev) {
-    // (only drop data and seed if there are no data types)
-    mongoose.connection.db.dropDatabase();
-      let s=new ReligionsSeeds();
-      s.createSeeds();
-  }
+  // if(dev) {
+  //   // (only drop data and seed if there are no data types)
+  //   mongoose.connection.db.dropDatabase();
+  //     let s=new ReligionsSeeds();
+  //     s.createSeeds();
+  // }
 
 
 // creates admin in database.
@@ -105,6 +104,7 @@ app.use('/client', express.static(path.join(__dirname,'../client')));
 // bootstrap api
 app.use('/api', require('./api/users'));
 app.use('/api', require('./api/profile'));
+app.use('/api', require('./api/religions'));
 
 //a server route
 app.use('/', require('./routes/index'));

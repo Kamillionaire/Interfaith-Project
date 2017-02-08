@@ -8,7 +8,7 @@ namespace IFP.Components{
     constructor(
       private UserService: IFP.Services.UserService,
       private $state: ng.ui.IStateService,
-      // private Session: IFP.Services.Session
+      private Session: IFP.Services.Session
     ) {
     }
 

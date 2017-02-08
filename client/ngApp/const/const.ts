@@ -24,4 +24,4 @@ angular.module('ifp')
   })
   .constant('RELIGIONS', {
       all:['Judaism','Christianity','Islam','Monotheist','Polytheist']
-  })
+  });

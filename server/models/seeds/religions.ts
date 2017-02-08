@@ -1,19 +1,19 @@
-import {Religions} from './../Religions';
+import {Religion} from './../Religions';
 namespace main.seeds {
   export class ReligionsSeeds {
     public seeds;
     constructor () {
       this.seeds= [
-        {name: 'Judaism', denomination: 'string', description: 'string', monotheistic: true,
-          historicOrigin: 'string', symbolicEmblem: 'string',},
-        {name: 'Christianity', denomination: 'string', description: 'string', monotheistic: true,
-          historicOrigin: 'string', symbolicEmblem: 'string',},
-        {name: 'Islam', denomination: 'string', description: 'string', monotheistic: true,
-          historicOrigin: 'string', symbolicEmblem: 'string',},
-        {name: 'Monotheist', denomination: 'string', description: 'string', monotheistic: true,
-          historicOrigin: 'string', symbolicEmblem: 'string',},
-        {name: 'Polytheist', denomination: 'string', description: 'string', monotheistic: false,
-          historicOrigin: 'string', symbolicEmblem: 'string',}
+        {name: 'Judaism', monotheistic: true,},
+        // denomination: 'string', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',
+        {name: 'Christianity', monotheistic: true,},
+        // denomination: 'string', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',},
+        {name: 'Islam', monotheistic: true,},
+        // denomination: 'string', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',},
+        {name: 'Monotheist', monotheistic: true,},
+        // denomination: 'string', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',},
+        {name: 'Polytheist', monotheistic: false,},
+        // denomination: 'string', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',}
       ]
 
     }
@@ -24,7 +24,7 @@ namespace main.seeds {
 
     createSeeds() {
       this.seeds.forEach((v) => {
-        Religions.create(v, (e) => {
+        Religion.create(v, (e) => {
           if(e) throw new Error(e);
 
         });
