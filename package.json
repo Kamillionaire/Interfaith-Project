@@ -4,7 +4,7 @@
   "description": "",
   "main": "./server/bin/www.js",
   "scripts": {
-    "preinstall":"npm i -g typescript && npm i -g bower",
+    "preinstall":"npm i typescript@2.1.5 && npm i bower",
     "postinstall":"tsc && bower i",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
