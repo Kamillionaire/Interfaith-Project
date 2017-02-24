@@ -1,6 +1,3 @@
-/// <reference types="angular" />
-/// <reference types="ngstorage" />
-
 namespace IFP {
   angular.module('ifp', ['ngResource', 'ui.router', 'ngStorage','ui.bootstrap','ngTable',
 ])

@@ -18,6 +18,7 @@
         "sourceMap": true
     },
     "exclude": [
+        "node_modules",
         "typings/browser",
         "typings/browser.d.ts"
     ],
