@@ -1,7 +1,7 @@
 {
   "name": "interfaith-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "Install bower dependancies `bower i`\r Install Node dependancies `npm i`\r add .env file",
   "main": "./server/bin/www.js",
   "scripts": {
     "preinstall":"npm i typescript@2.1.5 && npm i bower",
@@ -35,7 +35,6 @@
     "@types/angular-ui-router": "^1.1.36",
     "@types/body-parser": "0.0.33",
     "@types/connect-mongo": "0.0.32",
-    "@types/core-js": "^0.9.35",
     "@types/ejs": "^2.3.33",
     "@types/express": "^4.0.35",
     "@types/express-session": "0.0.32",
@@ -43,7 +42,7 @@
     "@types/lodash": "^4.14.50",
     "@types/mongodb": "^2.1.37",
     "@types/mongoose": "^4.7.3",
-    "@types/ngstorage": "^0.3.33",
+    "@types/ngstorage": "0.3.33",
     "@types/node": "^7.0.4",
     "@types/passport": "^0.3.1",
     "@types/passport-facebook": "^1.0.29",

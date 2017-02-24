@@ -1,4 +1,3 @@
-
 namespace IFP {
   angular.module('ifp', ['ngResource', 'ui.router', 'ngStorage','ui.bootstrap','ngTable',
 ])
@@ -51,6 +50,12 @@ namespace IFP {
           resolve: {
             profile: (ProfileService, $stateParams) => ProfileService.getProfile($stateParams['username'])
           }
+
+        })
+        .state('main.share',{
+          url: '/share',
+          parent: 'main',
+          template:'<share></share>'
         })
         .state('main.usersIndex', {
           url: '/usersIndex',

@@ -11,7 +11,7 @@ namespace IFP.Components {
             private UserService: IFP.Services.UserService,
             private $state: ng.ui.IStateService,
             STATES, $http:ng.IHttpService,
-            
+
 
         ) {
           $http.get('/api/religions').then((res)=>{
