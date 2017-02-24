@@ -4,6 +4,8 @@
   "description": "Install bower dependancies `bower i`\r Install Node dependancies `npm i`\r add .env file",
   "main": "./server/bin/www.js",
   "scripts": {
+    "preinstall":"npm i typescript@2.1.5 && npm i bower",
+    "postinstall":"tsc && bower i",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "sass": "node-sass -r ./client/styles/ -o ./client/styles/",
@@ -13,6 +15,10 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kamillionaire/Interfaith-Project.git"
+  },
+  "engines": {
+    "node":"6.9.4",
+    "npm":"3.10.10"
   },
   "author": "",
   "license": "ISC",

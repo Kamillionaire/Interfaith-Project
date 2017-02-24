@@ -57,7 +57,7 @@ namespace IFP.Services {
     export class Session {
         public user;
         constructor(
-            private $sessionStorage: angular.storage.IStorageService
+            private $sessionStorage
         ) {
             this.user = this.getUser();
         }
