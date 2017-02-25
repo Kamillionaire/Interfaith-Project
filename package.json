@@ -4,7 +4,7 @@
   "description": "Install bower dependancies `bower i`\r Install Node dependancies `npm i`\r add .env file",
   "main": "./server/bin/www.js",
   "scripts": {
-    "preinstall":"npm i typescript@2.1.5 && npm i bower",
+    "preinstall":"npm cache clean && npm i typescript@2.1.5 && npm i bower",
     "postinstall":"tsc && bower i",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
