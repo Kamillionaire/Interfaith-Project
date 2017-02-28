@@ -105,7 +105,7 @@ app.use('/client', express.static(path.join(__dirname,'../client')));
 app.use('/api', require('./api/users'));
 app.use('/api', require('./api/profile'));
 app.use('/api', require('./api/religions'));
-
+app.use('/api', require('./api/textStory'));
 //a server route
 app.use('/', require('./routes/index'));
 

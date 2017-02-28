@@ -43,6 +43,11 @@ namespace IFP {
           template: '<registration></registration>',
           parent: 'main'
         })
+        .state('main.story',{
+          url:'/story',
+          template:'<text></text>',
+          parent:'main'
+        })
         .state('main.profile', {
           url: '/profile/:username',
           parent: 'main',

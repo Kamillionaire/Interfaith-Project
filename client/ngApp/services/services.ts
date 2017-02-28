@@ -1,5 +1,18 @@
 namespace IFP.Services {
 
+    export class StoryService{
+      public StoryResource;
+
+      constructor($resource: ng.resource.IResourceService){
+        this.StoryResource = $resource('/api/textStory')
+
+      }
+
+      public postStory(story){
+        return this.StoryResource.save(story).$promise;
+      }
+    }
+
     export class UserService {
         private LoginResource;
         private LogoutResource;
@@ -104,5 +117,5 @@ namespace IFP.Services {
       angular.module('ifp').service('Session', Session);
       angular.module('ifp').service('UserService', UserService);
       angular.module('ifp').service('ProfileService', ProfileService);
-
+      angular.module('ifp').service('StoryService', StoryService);
 };
