@@ -10,3 +10,4 @@ bundle
 dist
 *.map
 !server/bin/www.js
+!wepack.*.js
