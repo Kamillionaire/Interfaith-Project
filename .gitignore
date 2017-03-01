@@ -4,3 +4,9 @@ bower_components
 *.js
 npm-debug.log
 *.js.map
+client/**/*.js
+server/**/*.js
+bundle
+dist
+*.map
+!server/bin/www.js

@@ -14,13 +14,14 @@
         "noLib": false,
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
-        "lib": ["es6","dom"],
+        "lib": ["dom", "es6"],
         "sourceMap": true
     },
     "exclude": [
         "node_modules",
         "typings/browser",
-        "typings/browser.d.ts"
+        "typings/browser.d.ts",
+        "client/ngApp"
     ],
     "compileOnSave": true,
     "buildOnSave": false,
