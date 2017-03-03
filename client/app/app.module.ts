@@ -1,4 +1,6 @@
 import * as angular from 'angular';
+import 'angular-ui-router';
+import core from './core/core.module';
 import config from './app.config';
 import run from './app.run';
 import AlertsComponent from './alerts/alerts.module';
@@ -8,15 +10,16 @@ import LoginComponent from './login/login.module';
 import Navigation from './navigation/navigation.module';
 import Registration from './registration/registration.module';
 import UsersIndex from './usersIndex/usersIndex.module';
-import Share from './share/share.module';
+
 const dependencies = [
+  'ui.router',
+  core, // core dependencies
   AlertsComponent,
   HomeComponent,
   LayoutComponent,
   LoginComponent,
   Navigation,
   UsersIndex,
-  Share,
   Registration
 ];
 

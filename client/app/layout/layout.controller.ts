@@ -2,7 +2,7 @@
 class LayoutController {
     public currentUser;
     constructor(
-        private UserService: IFP.Services.UserService,
+        private UserService,
         private $state: ng.ui.IStateService,
 
     ) {

@@ -9,7 +9,7 @@ class UsersIndexController {
       public id;
       public alerts = [];
     constructor(
-      private UserService: IFP.Services.UserService,
+      private UserService,
       private $state: ng.ui.IStateService,
       Session,
       $stateParams,
@@ -20,7 +20,7 @@ class UsersIndexController {
       this.tableParams = new NgTableParams({},{getData:(params)=>{
         return this.UserService.listUsers().then ((users)=>{
           return users;
-        }).catch ((err)=>{
+        }).catch ((err) => {
           throw new Error (err);
         })
 

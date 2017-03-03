@@ -5,8 +5,8 @@ class AlertsController {
 
   ) {
   }
-  close (i){
-    this.messages.splice(i,1);
+  close (i) {
+    this.messages.splice(i, 1);
   }
 }
 

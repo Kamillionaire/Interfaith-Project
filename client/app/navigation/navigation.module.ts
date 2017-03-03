@@ -1,5 +1,4 @@
 import * as angular from 'angular';
-import route from './navigation.route';
 import controller from './navigation.controller';
 
 const name = 'navigation';
@@ -11,5 +10,4 @@ export default angular.module('app.navigation', [])
     controller,
     controllerAs: 'vm'
   })
-  .config(route)
   .name;

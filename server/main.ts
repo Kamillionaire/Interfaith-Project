@@ -8,7 +8,7 @@ import * as session from 'express-session';
 const MongoStore = require('connect-mongo')(session);
 import Users from './models/Users';
 import Profile from './models/Profile';
-import {ReligionsSeeds} from './models/seeds/religions';
+// import {ReligionsSeeds} from './models/seeds/religions';
 
 //express routes
 import * as routes from './routes/index';

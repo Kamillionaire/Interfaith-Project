@@ -1,5 +1,4 @@
 import * as angular from 'angular';
-import route from './alerts.route';
 import controller from './alerts.controller';
 
 const name = 'alerts';
@@ -11,8 +10,7 @@ export default angular.module('app.alerts', [])
     controller,
     controllerAs: 'vm',
     bindings: {
-      messages:'<'
+      messages: '<'
     }
   })
-  .config(route)
   .name;
