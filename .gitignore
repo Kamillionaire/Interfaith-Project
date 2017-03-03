@@ -10,4 +10,4 @@ bundle
 dist
 *.map
 !server/bin/www.js
-!webpack.config.js
+!webpack.*.js
