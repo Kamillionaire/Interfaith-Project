@@ -6,13 +6,13 @@ let Schema = mongoose.Schema;
 export interface ITextPost extends mongoose.Document{
   title: string;
   content: string;
-  user: Array<IUser>;
+  user: string;
 };
 
 let TextPostSchema = new Schema({
   title: String,
   content: String,
-  user: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
+  owner: String
 });
 
 export const TextPost = mongoose.model<ITextPost>("TextPost", TextPostSchema);

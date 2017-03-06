@@ -9,20 +9,26 @@ let router = express.Router();
 //get all
 //TODO paginated
 router.get('/textStory', (req, res, next) => {
-    TextPost.find({}, {}, (e, data) => {
+    let query = {
+      owner: req.query.owner || {$exists: true}
+    };
+    TextPost.find(query, {}, (e, data) => {
         if (e) return next({ message: 'Could Not Find Religion', Error: e });
         res.json(data);
     });
 });
 router.get('/textStory/:id', (req, res, next) => {
+    // console.log();
     TextPost.findOne({_id:req.params.id}, {}, (e, data) => {
-        if (e) return next({ message: 'Could Not Find Religion', Error: e });
+        if (e) return next({ message: 'Could Not Find Religion', error: e });
         res.json(data);
     });
 });
 //new
 router.post('/textStory', (req, res, next) => {
+    //IS CURRENT USER ???  ONLY CURRENT USERS CAN POST
     TextPost.create(req.body, (e, data) => {
+        console.log(e);
         if (e) return next({ message: 'Could Not Find Religion', Error: e });
         res.json(data);
     })
