@@ -11,6 +11,9 @@ namespace IFP.Services {
       public postStory(story){
         return this.StoryResource.save(story).$promise;
       }
+      public getStories() {
+      return this.StoryResource.query().$promise;
+    }
     }
 
     export class UserService {

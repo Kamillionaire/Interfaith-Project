@@ -8,8 +8,14 @@
       <div>
         <textarea ng-model="vm.story.content"></textarea>
       </div>
+      
       <div>
         <button type="submit">create</button>
       </div>
     </form>
+</div>
+<div>
+  <form>
+    <story-card ng-repeat="story in vm.stories" story="story"></story-card>
+  </form>
 </div>
