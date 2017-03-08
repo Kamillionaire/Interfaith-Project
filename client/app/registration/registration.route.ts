@@ -2,7 +2,7 @@ const route = function route($stateProvider) {
   $stateProvider
     .state('registration', {
       parent: 'main',
-      url: '/',
+      url: '/registration',
       template: '<registration></registration>'
     });
 };

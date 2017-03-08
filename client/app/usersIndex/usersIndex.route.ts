@@ -2,7 +2,7 @@ const route = function route($stateProvider) {
   $stateProvider
     .state('usersIndex', {
       parent: 'main',
-      url: '/',
+      url: '/usersIndex',
       template: '<usersIndex></usersIndex>'
     });
 };

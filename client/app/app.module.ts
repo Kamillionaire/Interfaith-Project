@@ -10,6 +10,7 @@ import LoginComponent from './login/login.module';
 import Navigation from './navigation/navigation.module';
 import Registration from './registration/registration.module';
 import UsersIndex from './usersIndex/usersIndex.module';
+import Profile from './profile/profile.module';
 
 const dependencies = [
   'ui.router',
@@ -20,11 +21,12 @@ const dependencies = [
   LoginComponent,
   Navigation,
   UsersIndex,
-  Registration
+  Registration,
+  Profile
 ];
 
 angular.module('ifp', dependencies)
   .config(config)
   .run(run);
 
-angular.bootstrap(document.body, [name], { strictDi: true });
+angular.bootstrap(document.body, ['ifp'], { strictDi: true });

@@ -1,9 +1,9 @@
 const route = function route($stateProvider) {
   $stateProvider
-    .state('login', {
-        parent: 'main',
-      url: '/login',
-      template: '<login></login>'
+    .state('profile', {
+      parent: 'main',
+      url: '/profile/:username',
+      template: '<profile></profile>'
     });
 };
 

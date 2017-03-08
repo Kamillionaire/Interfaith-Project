@@ -1,4 +1,4 @@
-import * as angular from 'angular'
+import * as angular from 'angular';
 export default angular.module('ifp.core.const', [])
   .constant('AUTH_EVENTS', {
     loginSuccess: 'auth-login-success',
@@ -18,12 +18,12 @@ export default angular.module('ifp.core.const', [])
     admin: 'admin'
   })
   .constant('STATES', {
-      all:['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN',
-      'IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH',
-      'NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT',
-      'VT','VA','WA','WV','WI','WY']
+      all: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN',
+      'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH',
+      'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT',
+      'VT', 'VA', 'WA', 'WV', 'WI', 'WY']
   })
-  .constant('RELIGIONS', {
-      all:['Judaism','Christianity','Islam','Monotheist','Polytheist']
+  .constant('RELIGION', {
+      all: ['Judaism', 'Christianity', 'Islam', 'Monotheist', 'Polytheist']
   })
 .name;

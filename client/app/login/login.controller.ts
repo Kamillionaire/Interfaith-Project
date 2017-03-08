@@ -4,14 +4,16 @@ class LoginController {
   constructor(
     private UserService,
     private $state: ng.ui.IStateService,
-    private Session
-  ){
+    private SessionService,
+    private $sessionStorage
+  ) {
 
   }
 
    public login(user) {
     this.UserService.login(user).then((res) => {
-       this.$state.go('main.profile', {username: res.username}, {reload: true, notify: true});
+      this.$sessionStorage.user = res.user;
+       this.$state.go('profile', {username: res.username}) ;
     }).catch((err) => {
       this.alerts.push({type: 'warning', message: 'Something went awry!!, Try again!'});
     });
@@ -21,7 +23,7 @@ class LoginController {
   }
    public logout() {
     this.UserService.logout().then(() => {
-      this.$state.go('main.home', null, {reload: true, notify: true});
+      this.$state.go('home', null, {reload: true, notify: true});
     }).catch(() => {
       throw new Error('Unsuccessful logout');
     });
@@ -31,7 +33,8 @@ class LoginController {
 LoginController.$inject = [
   'UserService',
   '$state',
-  'Session'
+  'SessionService',
+  '$sessionStorage'
 ];
 
 export default LoginController;

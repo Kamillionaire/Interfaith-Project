@@ -1,10 +1,10 @@
 import * as angular from 'angular';
 
 export class ProfileServiceC {
-    public ProfileResource
+    public ProfileResource;
     constructor(
-      private $resource: ng.resource.IResourceService){
-        this.ProfileResource = $resource('/api/profile/:username',{username:'@username'});
+      private $resource: ng.resource.IResourceService) {
+        this.ProfileResource = $resource('/api/profile/:username', {username: '@username'});
 
 }
     public getProfile(username) {

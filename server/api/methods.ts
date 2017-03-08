@@ -6,11 +6,11 @@ import Users from '../models/Users';
 
 let router = express.Router();
 
-//Express has Express.Request but the interface isn't very good...  requires overrides
+// Express has Express.Request but the interface isn't very good...  requires overrides
 function setSession(req, res, next, user) {
   let token = user.generateJWT();
 
-  return req.logIn(user, (err) => { console.log (err)
+  return req.logIn(user, (err) => { console.log (err);
     if (err) res.status(500).json({message: 'login failed'});
     return req.session.save(function (err){
       if (err) res.sendStatus(500).json({message: 'session failed'});
@@ -30,24 +30,24 @@ function destroySession(req, res, next) {
 }
 
 function isAdmin(req, res, next) {
-  if(!req.user){
+  if (!req.user) {
     res.status(401).json({message: 'unauthorized'});
   }
   return req.user['roles'].some((v) => v === 'admin') ? next() : res.status(401).json({});
 }
 
 function deleteProfile(req, res, next) {
-  if(!req.user){
+  if (!req.user) {
     res.status(401).json({message: 'unauthorized'});
   }
   return req.user['roles'].some((v) => v === 'admin') ? next() : res.status(401).json({});
 }
 
 const methods = {
-  setSession: setSession,
-  destroySession: destroySession,
-  isAdmin: isAdmin,
-  deleteProfile: deleteProfile
-}
+  '{setSession}': setSession,
+  '{destroySession}': destroySession,
+  '{isAdmin}': isAdmin,
+  '{deleteProfile}': deleteProfile
+};
 
 export default methods;
