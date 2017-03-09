@@ -11,3 +11,4 @@ dist
 *.map
 !server/bin/www.js
 !webpack.*.js
+!bs-config.js

@@ -4,8 +4,9 @@ class AlertsController {
   constructor(
 
   ) {
+    
   }
-  close (i) {
+  public close (i) {
     this.messages.splice(i, 1);
   }
 }

@@ -2,23 +2,23 @@ import * as mongoose from 'mongoose';
 
 let Schema = mongoose.Schema;
 
-export interface IReligion extends mongoose.Document{
-  name: string,
-  denomination: string,
+export interface IReligion extends mongoose.Document {
+  name: string;
+  // denomination: string;
   // description: string,
-  // monotheistic: boolean,
+  monotheistic: boolean;
   // historicOrigin: string,
   // symbolicEmblem: string,
 };
 
 let ReligionSchema = new mongoose.Schema({
   name: String,
-  denomination: String,
+  // denomination: String,
   // description: String,
-  // monotheistic: Boolean,
+  monotheistic: Boolean,
   // historicOrigin: String,
   // symbolicEmblem: String,
 });
 
 
-export const Religion = mongoose.model<IReligion>("Religion", ReligionSchema);
+export const Religion = mongoose.model<IReligion>('Religion', ReligionSchema);

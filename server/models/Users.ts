@@ -4,21 +4,21 @@ import * as jwt from 'jsonwebtoken';
 import Profile from './../models/Profile';
 
 export interface IFacebook {
-  token: string,
-  name: string,
-  email: string
+  token: string;
+  name: string;
+  email: string;
 }
 
 export interface IUser extends mongoose.Document {
-  username: {type: String, lowercase: true, unique: true},
-  passwordHash: String,
-  salt: String,
-  facebookId: String,
-  facebook: IFacebook,
-  setPassword(password: string): boolean,
-  validatePassword(password: string): boolean,
-  generateJWT(): JsonWebKey,
-  roles: Array<String>
+  username: {type: String, lowercase: true, unique: true};
+  passwordHash: String;
+  salt: String;
+  facebookId: String;
+  facebook: IFacebook;
+  setPassword(password: string): boolean;
+  validatePassword(password: string): boolean;
+  generateJWT(): JsonWebKey;
+  roles: Array<String>;
 }
 
 let UserSchema = new mongoose.Schema({
@@ -54,4 +54,4 @@ UserSchema.method('generateJWT', function() {
   }, process.env.JWT_SECRET, {expiresIn: '2 days'});
 
 });
-export default mongoose.model<IUser>("User", UserSchema);
+export default mongoose.model<IUser>('User', UserSchema);
