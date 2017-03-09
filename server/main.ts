@@ -20,11 +20,6 @@ let app = express();
 // optional for security
 const dev = app.get('env') === 'development' ? true : false;
 
-// optional
-if (dev) {
-  let dotenv = require('dotenv');
-  dotenv.load();
-}
 require ('./config/passport');
 
 // db connections
