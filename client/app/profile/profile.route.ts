@@ -3,7 +3,10 @@ const route = function route($stateProvider) {
     .state('profile', {
       parent: 'main',
       url: '/profile/:username',
-      template: '<profile></profile>'
+      template: '<profile></profile>',
+      resolve: {
+        currentSession: ['SessionService', (SessionService) => SessionService.getUser()]
+      }
     });
 };
 

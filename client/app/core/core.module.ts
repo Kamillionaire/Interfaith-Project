@@ -1,5 +1,4 @@
 import * as angular from 'angular';
-import 'ngstorage';
 import 'angular-resource';
 import 'angular-animate';
 import 'angular-aria';
@@ -18,9 +17,7 @@ export default angular.module('app.core', [
   UserService,
   ProfileService,
   SessionService,
-  'ngStorage',
   'ngResource',
-  'ngStorage',
   'ui.bootstrap'
 ])
   .name;
