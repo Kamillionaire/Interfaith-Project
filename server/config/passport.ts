@@ -11,7 +11,7 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(obj, done) {
-  Users.findOne({_id: obj['_id']}, {passwordHash: 0, salt: 0}, (err, user) => {
+  Users.findOne({username: obj['username']}, {passwordHash: 0, salt: 0, _id: 0}, (err, user) => {
     if (err) done(null, {});
     done(null, user);
   });
@@ -43,7 +43,7 @@ passport.use(new FacebookStrategy({
   }
 ));
 
-passport.use(new LocalStrategy(function(username: string, password: string, done) {
+passport.use(new LocalStrategy({session: true}, function(username: string, password: string, done) {
   let lc = username.toLowerCase();
   console.log(lc);
   Users.findOne({ username: lc }, { _id: 0, __v: 0}).select('+salt +passwordHash')

@@ -6,6 +6,7 @@ import Users from '../models/Users';
 import {Religion} from '../models/Religions';
 import Profile from '../models/Profile';
 import methods from './methods';
+var debug = require('debug')('myapp:server');
 
 let router = express.Router();
 
@@ -53,13 +54,24 @@ router.post('/login/local', function(req, res, next) {
     passport.authenticate('local', { session: true }, function(err, user, info) {
 
         if (err) return next(err);
-        req.logIn(user, (err) => {
-            if (err) return next ({ message: 'login failed', Error: err});
-            req.session.save(function(err) {
-                if (err) return res.status(500).json({ message: 'session failed' });
+        if (!user) return res.status(401).json({message: 'failed login'});
+        if (user) {
+          req.login(user, (err) => {
+            console.log('login');
+            if (err) return next({message: 'login failed', error: err, status: 500});
+            if (user) {
+              req.session.save(function (err){
+                if (err) return next({message: 'session failed', error: err, status: 500});
+                let token = user.generateJWT();
+                // console.log(req.session);
+                // console.log(req.user);
                 return res.json(user);
-            });
-        });
+              });
+            } else {
+              res.json({message: 'please try again.'}).status(500);
+            }
+          });
+        }
     })(req, res, next);
 });
 

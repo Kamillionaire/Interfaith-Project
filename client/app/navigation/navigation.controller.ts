@@ -1,20 +1,47 @@
-
+import {SessionServiceC} from '../services/session.service';
 class NavigationController {
+  public isAuthenticated;
+  public currentUser;
   constructor(
       private $state: ng.ui.IStateService,
-      $stateParams: ng.ui.IStateParamsService
+      $stateParams: ng.ui.IStateParamsService,
+      private SessionService: SessionServiceC,
+      private UserService,
+      private $sessionStorage
   ) {
-
+    this.isAuth();
   }
   public goToState(state: string) {
-    console.log(state);
     this.$state.go(state);
   }
+  public logout() {
+   this.UserService.logout().then(() => {
+     this.SessionService.destroy();
+     this.$state.go('home', null, {reload: true, notify: true});
+   }).catch(() => {
+     throw new Error('Unsuccessful logout');
+   });
+ }
+
+ public isAuth () {
+   this.UserService.getCurrentUser().then((user) => {
+     this.$sessionStorage.user = user;
+     this.isAuthenticated = user.hasOwnProperty('username');
+     this.currentUser = this.SessionService.getUser();
+   }).catch((user) => {
+     this.$sessionStorage.user = user;
+     this.isAuthenticated = user.hasOwnProperty('username');
+     this.currentUser = this.SessionService.getUser();
+   });
+ }
 }
 
 NavigationController.$inject = [
   '$state',
-  '$stateParams'
+  '$stateParams',
+  'SessionService',
+  'UserService',
+  '$sessionStorage'
 ];
 
 export default NavigationController;

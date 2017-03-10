@@ -1,5 +1,6 @@
 import * as angular from 'angular';
 import 'angular-ui-router';
+import 'ngstorage';
 import core from './core/core.module';
 import config from './app.config';
 import run from './app.run';
@@ -14,6 +15,7 @@ import Profile from './profile/profile.module';
 
 const dependencies = [
   'ui.router',
+  'ngStorage',
   core, // core dependencies
   AlertsComponent,
   HomeComponent,

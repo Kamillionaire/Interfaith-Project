@@ -1,74 +1,13 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <title>
-        <h1>Login</h1>
-    </title>
-</head>
-
-<body>
-  <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1891610194450764";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-    </script>
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId: 'your-app-id',
-                xfbml: true,
-                version: 'v2.8'
-            });
-
-            FB.AppEvents.logPageView();
-            FB.getLoginStatus(function(response) {
-                if (response.status === 'connected') {
-                    console.log('Logged in.');
-                } else {
-                    FB.login();
-                }
-            });
-        };
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {
-                return;
-            }
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-    <script>
-        // Only works after `FB.init` is called
-        function myFacebookLogin() {
-          FB.login(function(){
-          // Note: The call will only work if you accept the permission request
-          FB.api('/me/feed', 'post', {message: 'Hello, world!'});
-          }, {scope: 'publish_actions'});
-        }
-    </script>
-
-</body>
-
-</html>
 <alerts messages="vm.alerts"></alerts>
 
 <form ng-submit="vm.login(vm.user)">
-    <div class="form-group"><label>User Name</label>
-        <input class="form-control" type="text" ng-model="vm.user.username">
-    </div>
-    <div class="form-group"><label>Password</label>
-        <input class="form-control" type="password" ng-model="vm.user.password">
-    </div>
-    <button class="btn btn-warning" type="submit">Submit</button>
+  <div class="form-group"><label>User Name</label>
+    <input class="form-control" type="text" ng-model="vm.user.username">
+  </div>
+  <div class="form-group"><label>Password</label>
+    <input class="form-control" type="password" ng-model="vm.user.password">
+  </div>
+  <button class="btn btn-warning" type="submit">Submit</button>
 </form>
 <br>
-  <button class = ng-click="myFacebookLogin()">Login with Facebook</button>
+<button class = ng-click="myFacebookLogin()">Login with Facebook</button>

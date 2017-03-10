@@ -13,9 +13,9 @@ export default [
   ) {
     $rootScope.$on('$stateChangeStart', (event, next) => {
       UserService.getCurrentUser().then((user) => {
-        $sessionStorage.user = user.data;
+        $sessionStorage.user = user;
       }).catch((user) => {
-        $sessionStorage.user = user.data;
+        $sessionStorage.user = user;
       });
 
       if (next.data) {
