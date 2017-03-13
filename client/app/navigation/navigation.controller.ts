@@ -11,6 +11,9 @@ class NavigationController {
   ) {
     this.isAuth();
   }
+  public isAuthorized(roles: string) {
+    return this.SessionService.isAuthorized(roles);
+  }
   public goToState(state: string) {
     this.$state.go(state);
   }

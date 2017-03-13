@@ -84,20 +84,20 @@ router.get('/logout/local', (req, res, next) => {
   });
 });
 
-// router.delete('/users/:username', methods.isAdmin, (req, res, next) => {
-//     if (req.params.username === 'admin') return res.status(401).json
-//     ({message: 'Yeah right! Admins can not be deleted!!!'});
-//     Users.remove ({username: req.params.username}, (err) => {
-//       if (err) return next({message: 'error deleting', error: err});
-//         return res.status(200).json({message: 'Deleted!'});
-//     });
-// });
-// router.get('/users', methods.isAdmin, (req, res, next) => {
-//   Users.find().then((users) => {
-//     res.json(users);
-//   }).catch ((err) => {
-//     return next({message: 'can not list users', error: err});
-//   });
-// });
+router.delete('/users/:username', (req, res, next) => {
+    if (req.params.username === 'admin') return res.status(401).json
+    ({message: 'Yeah right! Admins can not be deleted!!!'});
+    Users.remove ({username: req.params.username}, (err) => {
+      if (err) return next({message: 'error deleting', error: err});
+        return res.status(200).json({message: 'Deleted!'});
+    });
+});
+router.get('/users', (req, res, next) => {
+  Users.find().then((users) => {
+    res.json(users);
+  }).catch ((err) => {
+    return next({message: 'can not list users', error: err});
+  });
+});
 
 export = router;

@@ -1,13 +1,13 @@
 import * as bodyParser from 'body-parser';
-import * as cookieParser from 'cookie-parser';
+// import * as cookieParser from 'cookie-parser';
 import * as debug from 'debug';
 import * as ejs from 'ejs';
 import * as express from 'express';
 import * as session from 'express-session';
-import * as helmet from 'helmet';
+// import * as helmet from 'helmet';
 import * as mongoose from 'mongoose';
 let MongoStore = require('connect-mongo')(session);
-import * as morgan from 'morgan';
+// import * as morgan from 'morgan';
 import * as passport from 'passport';
 import * as path from 'path';
 import User from './models/Users';
@@ -20,10 +20,10 @@ const isDev = app.get('env') === 'development' ? true : false;
 
 require('./config/passport');
 // helmet (read the docs)
-app.use(helmet());
+// app.use(helmet());
 
 // logging
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 
 // view engine setup
 app.set('views', path.join(__dirname, '/views'));
@@ -34,7 +34,7 @@ app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 app.use('/client', express.static('client'));
 
 // parse cookies ability
-app.use(cookieParser());
+// app.use(cookieParser());
 
 // Connect to db
 mongoose.connect(process.env.MONGO_URI)

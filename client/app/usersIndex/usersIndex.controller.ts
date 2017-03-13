@@ -4,46 +4,41 @@ class UsersIndexController {
       public profileID;
       public profile;
       public users;
-      public tableParams;
-      public Session;
-      public id;
       public alerts = [];
     constructor(
       private UserService,
       private $state: ng.ui.IStateService,
-      Session,
-      $stateParams,
-      _,
-      private NgTableParams
+      SessionService,
+      $stateParams
     ) {
-      this.currentUser = Session.getUser();
-      this.tableParams = new NgTableParams({}, {getData: (params) => {
-        return this.UserService.listUsers().then ((users) => {
-          return users;
-        }).catch ((err) => {
-          throw new Error (err);
+      this.currentUser = SessionService.getUser();
+      this.getUsers();
+      console.log('Show me my users');
+      }
+      public getUsers() {
+        this.UserService.listUsers().then ((users) => {
+          this.users = users;
+          console.log('I see my list! Yaaay!!!');
+       }).catch ((err) => {
+         this.alerts.push({type: 'warning', message: 'Could not find users.'});
         });
-
-
-      }} );
 
       }
       public delete (username) {
         confirm('Are you sure you want to delete this?');
           this.UserService.deleteUser(username).then(() => {
               this.$state.go('usersIndex', null, { reload: true, notify: true });
-          }).catch((e) => {
-            this.alerts.push({type: 'danger', message: e.data.message});
+          }).catch((err) => {
+            this.alerts.push({type: 'danger', message: 'Could not delete User.'});
           });
       }
   };
 
 UsersIndexController.$inject = [
-  'Session',
-  '$stateParams',
   'UserService',
   '$state',
-  '_'
+  'SessionService',
+  '$stateParams'
 ];
 
 export default UsersIndexController;

@@ -18,7 +18,7 @@ const Config = [
       abstract: true,
       template: '<layout></layout>'
     });
-
+  $urlRouterProvider.otherwise('/');
   $locationProvider.html5Mode({
     enabled: true,
     requireBase: true,

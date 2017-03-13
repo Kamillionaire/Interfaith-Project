@@ -1,4 +1,4 @@
-
+import {ProfileServiceC} from '../services/profile.service';
 class ProfileController {
   public currentUser;
   public profileID;
@@ -6,7 +6,7 @@ class ProfileController {
   public alerts;
 
   constructor(
-    private UserService,
+    private ProfileService: ProfileServiceC,
     private $state: ng.ui.IStateService,
     SessionService,
     $stateParams
@@ -17,12 +17,17 @@ class ProfileController {
 
   public getProfile() {
     // api call to profiles
+    this.ProfileService.getProfile(this.profileID).then((res) => {
+        this.profile = res;
+      }).catch((err) => {
+        this.alerts.push({type: 'warning', message: 'Oh no! We can not find your profile! Please login again'});
+      });
   }
 };
 
 
 ProfileController.$inject = [
-  'UserService',
+  'ProfileService',
   '$state',
   'SessionService',
   '$stateParams'

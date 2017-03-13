@@ -4,22 +4,24 @@ namespace seeds {
     public seeds;
     constructor () {
       this.seeds = [
-        {name: 'Judaism', monotheistic: true, },
-        // denomination: 'string', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',
-        {name: 'Christianity', monotheistic: true, },
-        // denomination: 'string', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',},
-        {name: 'Islam', monotheistic: true, },
-        // denomination: 'string', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',},
-        {name: 'Monotheist', monotheistic: true, },
-        // denomination: 'string', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',},
-        {name: 'Polytheist', monotheistic: false, },
-        // denomination: 'string', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',},
-        {name: 'Buddhism', monotheistic: false, },
-        // denomination: 'string', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',},
-        {name: 'Hinduism', monotheistic: false, },
-        // denomination: 'string', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',},
-        {name: 'other', monotheistic: false, },
-        // denomination: 'string', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',}
+        {name: 'Judaism',
+        description: 'string', historicOrigin: 'string', symbolicEmblem: 'string'},
+        {name: 'Christianity', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',},
+        {name: 'Islam', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',},
+        {name: 'Islam', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',},
+        {name: 'Buddhism', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',},
+        {name: 'Buddhism', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',},
+        {name: 'Buddhism', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',},
+        {name: 'Buddhism', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',},
+        {name: 'Buddhism', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',},
+        {name: 'Buddhism', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',},
+        {name: 'Hinduism', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',},
+        {name: 'Hinduism', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',},
+        {name: 'Hinduism', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',},
+        {name: 'Hinduism', description: 'string', historicOrigin: 'string', symbolicEmblem: 'string',},
+        {name: 'Monotheist Belief', symbolicEmblem: 'string',},
+        {name: 'Polytheist Belief', symbolicEmblem: 'string',},
+        {name: 'other'},
       ];
 
     }

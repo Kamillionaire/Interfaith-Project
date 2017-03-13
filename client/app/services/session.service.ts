@@ -17,7 +17,7 @@ export class SessionServiceC {
     return !!user['username'];
   }
 
-  private isAuthorized(roles) {
+  public isAuthorized(roles) {
     let user = this.getUser();
     if (!user['roles']) {
       return false;

@@ -2,22 +2,16 @@
 <hr>
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h2 class="panel-title">YOUR PROFILE:</h2>
+    <h2>YOUR PROFILE:</h2>
+    <h1>{{vm.profile.username}}</h1>
   </div>
 </div>
   <div class="panel-body">
-    <h5>Image:</h5>
-    <img ng-src="" class="img-responsive movie-poster-image" >
+    <h3>{{vm.currentUser.user}}</h3>
   </div>
-  <div class="panel-body">
-    <h1>{{vm.currentUser.username}}</h1>
-  </div>
-
-<hr>
-
 <div class="panel panel-default">
   <div class="panel-heading">
-  <h4>Religious Affiliation:</h4>
+  <h2>Religious Affiliation:</h2>
     <h1>{{vm.profile.religion.name}}</h1>
   </div>
 </div>
@@ -27,33 +21,3 @@
     <h2>{{vm.profile.religion.monotheistic}}</h2>
   </div>
 </div>
-<!-- <div class="panel panel-default">
-  <div class="panel-heading">
-  <h4>Description:</h4>
-    <h2>{{vm.profile.pType.detail}}</h2>
-  </div>
-</div>
-<div class="panel panel-success">
-  <div class="panel-heading">
-  <h4>Ideal Matches:</h4>
-    <h1>{{vm.profile.pType.idealMatches}}</h1>
-  </div>
-</div>
-<div class="panel panel-info">
-  <div class="panel-heading">
-  <h4>Kindred Spirits:</h4>
-    <h1>{{vm.profile.pType.kindredSpirits}}</h1>
-  </div>
-</div>
-<div class="panel panel-warning">
-  <div class="panel-heading">
-  <h4>Compliments:</h4>
-    <h1>{{vm.profile.pType.compliments}}</h1>
-  </div>
-</div>
-<div class="panel panel-danger">
-  <div class="panel-heading">
-  <h4>Opposites:</h4>
-    <h1>{{vm.profile.pType.opposites}}</h1>
-  </div>
-</div> -->
