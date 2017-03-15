@@ -6,8 +6,7 @@ export interface IProfile extends mongoose.Document {
   state: string;
   picture: string;
   religion: string;
-  denomination: string;
-  monotheistic: Boolean;
+  description: string;
   username: string;
   // sex:string;
 
@@ -17,9 +16,8 @@ let Profile = new mongoose.Schema({
   email: {type: String, required: true, unique: true, lowercase: true },
   dob: {type: String, required: true},
   state: {type: String, required: true},
-  picture: String,
-  denomination: String,
-  monotheistic: Boolean,
+  emblem: String,
+  description: String,
   religion: {type: String, ref: 'Religion', required: true},
   username: {type: String, required: true, unique: true, lowercase: true}
   // sex:String,

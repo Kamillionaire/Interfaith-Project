@@ -11,6 +11,7 @@ let MongoStore = require('connect-mongo')(session);
 import * as passport from 'passport';
 import * as path from 'path';
 import User from './models/Users';
+import {ReligionsSeeds} from './models/seeds/religion';
 
 // replacing deprecated promise
 (<any> mongoose).Promise = global.Promise;
@@ -21,6 +22,7 @@ const isDev = app.get('env') === 'development' ? true : false;
 require('./config/passport');
 // helmet (read the docs)
 // app.use(helmet());
+const dev = app.get('env') === 'development' ? true : false;
 
 // logging
 // app.use(morgan('dev'));
@@ -39,6 +41,15 @@ app.use('/client', express.static('client'));
 // Connect to db
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
+
+    // if dev ReligionsSeeds do not exist, run this
+      // if (dev) {
+        // (only drop data and seed if there are no data types)
+      //   mongoose.connection.dropDatabase();
+      //     let s = new ReligionsSeeds();
+      //     s.createSeeds();
+      // }
+
     console.log('mongoose connected');
     User.findOne({username: 'admin'}, (err, user) => {
       if (err) return;
@@ -53,6 +64,7 @@ mongoose.connect(process.env.MONGO_URI)
   }).catch((e) => {
     console.log(e);
   });
+
 
 // serve cookies through the proxy
 if (!isDev) {
