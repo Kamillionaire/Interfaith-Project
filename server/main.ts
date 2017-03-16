@@ -113,6 +113,8 @@ app.use('/', require('./routes/index'));
 app.use('/api', require('./api/users'));
 app.use('/api', require('./api/profile'));
 app.use('/api', require('./api/religions'));
+// app.use('/api', require('./api/message'));
+
 
 // THIS IS THE INTERCEPTION OF ALL OTHER REQ
 // After server routes / static / api

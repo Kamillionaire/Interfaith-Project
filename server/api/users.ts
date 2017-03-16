@@ -37,6 +37,7 @@ router.post('/Register', function(req, res, next) {
         userProfile.email = req.body.email;
         userProfile.state = req.body.state;
         userProfile.religion = req.body.religion;
+        userProfile.gender = req.body.gender;
         console.log(userProfile.religion);
         userProfile.save((err, profile) => {
             if (err) return next(err);

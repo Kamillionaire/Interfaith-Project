@@ -8,7 +8,7 @@ export interface IProfile extends mongoose.Document {
   religion: string;
   description: string;
   username: string;
-  // sex:string;
+  gender: string;
 
 };
 
@@ -19,9 +19,8 @@ let Profile = new mongoose.Schema({
   emblem: String,
   description: String,
   religion: {type: String, ref: 'Religion', required: true},
-  username: {type: String, required: true, unique: true, lowercase: true}
-  // sex:String,
-
+  username: {type: String, required: true, unique: true, lowercase: true},
+  gender: String,
 });
 
 export default mongoose.model <IProfile> ('Profile', Profile);

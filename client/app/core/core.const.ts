@@ -26,4 +26,8 @@ export default angular.module('ifp.core.const', [])
   .constant('RELIGION', {
       all: ['Judaism', 'Christianity', 'Islam', 'Monotheist', 'Polytheist']
   })
+  .constant('GENDER', {
+      all: ['Female', 'Male']
+  })
+
 .name;

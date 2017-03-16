@@ -52,6 +52,10 @@ module.exports = {
         loader: 'source-map-loader'
       },
       {
+        test: /ng-table[\/\\]src[\/\\].*\.html$/,
+        loaders: ['ngtemplate-loader?requireAngular&relativeTo=/src/browser/&prefix=ng-table/', 'html-loader']
+      },
+      {
         test: /\.scss$/,
         use: [{
           loader: 'style-loader' // creates style nodes from JS strings

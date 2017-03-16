@@ -66,8 +66,10 @@ namespace seeds {
         "philosophical Taoism" (Tao-chia) and "religious Taoism" (Tao-chaio). The two are not as strongly distinguished
         as once thought, but philosophical Taoism tends to focus on the philosophical writings of Lao-Tzu, Chuang-Tzu
         and other early mystics while religious Taoism emphasizes religious rituals aimed at attaining immortality.`},
-        {name: 'other', historicOrigin: 'You', emblem: 'client/assets/other.png',
-        description: `Your personal beliefes on religion`},
+        {name: 'Seeker', historicOrigin: 'That depends...', emblem: 'client/assets/seeker.png',
+        description: `Seeking truth through education.`},
+        {name: 'Other', historicOrigin: 'You', emblem: 'client/assets/other.png',
+        description: `Your personal beliefes on religion.`},
       ];
 
     }

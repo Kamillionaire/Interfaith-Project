@@ -12,6 +12,7 @@ import Navigation from './navigation/navigation.module';
 import Registration from './registration/registration.module';
 import UsersIndex from './usersIndex/usersIndex.module';
 import Profile from './profile/profile.module';
+// import Message from './message/message.module';
 
 const dependencies = [
   'ui.router',
@@ -24,7 +25,8 @@ const dependencies = [
   Navigation,
   UsersIndex,
   Registration,
-  Profile
+  Profile,
+  // Message
 ];
 
 angular.module('ifp', dependencies)

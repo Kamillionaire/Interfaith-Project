@@ -1,7 +1,7 @@
-<h1>Register</h1>
+<h1>Register!</h1>
 
 <div class="well">
-<alerts messages = "vm.alerts" ></alerts>
+    <alerts messages="vm.alerts"></alerts>
 
     <form ng-submit="vm.register()" class="form-horizontal">
 
@@ -31,33 +31,69 @@
             <div class="form-group">
                 <label for="inputDob" class="col-xs-1 control-label">DOB</label>
                 <div class="col-lg-10">
-                  <div uib-datepicker ng-model="vm.user.dob" class="well well-sm"></div>
+                    <div uib-datepicker ng-model="vm.user.dob" class="well well-sm"></div>
                 </div>
             </div>
-
-        <div class="well">
-            <div class="btn-group" uib-dropdown>
-                <button id="split-button" type="button" class="btn btn-warning">{{vm.user.state ||'State'}}</button>
-                <button type="button" class="btn btn-warning" uib-dropdown-toggle>
+            <form class="form-horizontal">
+                <fieldset>
+                    <!-- <legend>
+                        <h3>About Me</h3></legend> -->
+                    <div class="form-group">
+                        <label for="textArea" class="col-lg-2 control-label">My Bio:   </label>
+                        <div class="col-lg-10">
+                            <textarea class="form-control" rows="3" id="textArea"></textarea>
+                            <span class="help-block">Providing a little background info on yourself is a great way to facilitate conversation!</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Gender:</label>
+                        {{vm.user.gender}}
+                        <div class="col-lg-10">
+                            <div class="radio">
+                                <label>
+                       <input type="radio" ng-model="vm.user.gender" name="gender" value="Female">
+                       Female
+                     </label>
+                            </div>
+                            <div class="radio">
+                      <label>
+                       <input type="radio" ng-model="vm.user.gender" name="gender" value="Male">
+                       Male
+                     </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <span class="input-group-btn">
+                    </span>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <div class="well">
+                <div class="btn-group btn-group" uib-dropdown>
+                    <button id="split-button" type="button" class="btn btn-warning">{{vm.user.state ||'State'}}</button>
+                    <button type="button" class="btn btn-warning" uib-dropdown-toggle>
                     <span class="caret"></span>
                     <span class="sr-only">Split button!</span>
                 </button>
-                <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="split-button">
-                    <li ng-click="vm.user.state = state" ng-repeat="state in vm.states" role="menuitem"><a>{{state}}</a></li>
-                </ul>
-            </div>
+                    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="split-button">
+                        <li ng-click="vm.user.state = state" ng-repeat="state in vm.states" role="menuitem"><a>{{state}}</a></li>
+                    </ul>
+                </div>
 
-            <div class="btn-group" uib-dropdown>
-                <button id="split-button" type="button" class="btn btn-warning">{{vm.user.religion.name ||'Religion'}}</button>
-                <button type="button" class="btn btn-warning" uib-dropdown-toggle>
+                <div class="btn-group" uib-dropdown>
+                    <button id="split-button" type="button" class="btn btn-warning">{{vm.user.religion.name ||'Religion'}}</button>
+                    <button type="button" class="btn btn-warning" uib-dropdown-toggle>
                     <span class="caret"></span>
                     <span class="sr-only">Split button!</span>
                 </button>
-                <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="split-button">
-                    <li ng-click="vm.user.religion = religion" ng-repeat="religion in vm.religions" role="menuitem"><a>{{religion.name}}</a></li>
-                </ul>
+                    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="split-button">
+                        <li ng-click="vm.user.religion = religion" ng-repeat="religion in vm.religions" role="menuitem"><a>{{religion.name}}</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
             <div class="form-group">
                 <div class="col-xs-12">
