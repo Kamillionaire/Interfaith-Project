@@ -1,9 +1,14 @@
 import * as passport from 'passport';
 import * as mongoose from 'mongoose';
+import Users, {IUser} from '../models/Users';
+import * as jwt from 'jsonwebtoken';
+
 let LocalStrategy = require('passport-local').Strategy;
 let FacebookStrategy = require('passport-facebook').Strategy;
-import Users from '../models/Users';
-import * as jwt from 'jsonwebtoken';
+// let TwitterStrategy = require('passport-twitter').Strategy;
+// let JwtStrategy = require('passport-jwt').Strategy;
+// let ExtractJwt = require('passport-jwt').ExtractJwt;
+
 
 passport.serializeUser(function(user, done) {
    console.log('serializeUser', user);
@@ -42,6 +47,31 @@ passport.use(new FacebookStrategy({
     });
   }
 ));
+// passport.use(new TwitterStrategy({
+//     consumerKey: process.env.TWITTER_KEY,
+//     consumerSecret: process.env.TWITTER_SECRET,
+//     callbackURL: process.env.ROOT_URL + '/auth/twitter/callback',
+//     profileFields: ['id', 'displayName', 'photos'],
+//     session: true
+//   },
+//   function(token, tokenSecret, profile, cb) {
+//     Users.findOne({ twitterId: profile.id }, function (err, user) {
+//       if (user) {
+//         return cb(err, user);
+//       } else {
+//         let u = new Users();
+//         u.username = profile.displayName;
+//         u.twitterId = profile.id;
+//         u.twitter.name = profile.displayName;
+//         u.twitter.token = token;
+//         u.save((err) => {
+//           if (err) cb(err, null);
+//           return cb(null, u);
+//         });
+//       }
+//     });
+//   }
+// ));
 
 passport.use(new LocalStrategy({session: true}, function(username: string, password: string, done) {
   let lc = username.toLowerCase();

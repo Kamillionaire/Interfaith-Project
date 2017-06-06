@@ -21,6 +21,43 @@ export interface IUser extends mongoose.Document {
   roles: Array<String>;
 }
 
+// export interface ITwitter {
+//   token: string;
+//   name: string;
+//   email: string;
+// }
+//
+// export interface IUser extends mongoose.Document {
+//   username: string;
+//   email: string;
+//   passwordHash: string;
+//   salt: string;
+//   twitterId: string;
+//   twitter: ITwitter;
+//   setPassword(password: string): boolean;
+//   validatePassword(password: string): boolean;
+//   generateJWT(): JsonWebKey;
+//   roles: [string];
+// }
+// let UserSchema = new mongoose.Schema({
+//   username: { type: String, unique: true},
+//   email: {
+//     type: String,
+//     unique: true,
+//     lowercase: true,
+//     validate: [validator.isEmail, 'invalid email']
+//   },
+//   passwordHash: {type: String, select: false},
+//   salt: {type: String, select: false},
+//   twitterId: String,
+//   twitter: {
+//     token: String,
+//     name: String,
+//     email: String
+//   },
+//   roles: {type: Array, default: ['user']}
+// });
+//
 let UserSchema = new mongoose.Schema({
   username: {type: String, lowercase: true, unique: true, required: true},
   passwordHash: {type: String, select: false},

@@ -25,7 +25,6 @@ class ProfileController {
   }
 };
 
-
 ProfileController.$inject = [
   'ProfileService',
   '$state',
